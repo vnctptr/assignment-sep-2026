@@ -1,0 +1,70 @@
+<div style="margin: 1em">
+
+    <h3>Search and Filter</h3>
+    <form method="get">
+        <div>
+        <label for="tag">Tag</label>
+        <select name="tag">
+            <option value=""></option>
+            {% for tag in tags %}
+            <option
+                    value="{{ tag.id }}"
+                    {% if tag.id|stringformat:"s" == selected_tag %}selected{% endif %}
+            >
+            {{ tag.name }}
+            </option>
+            {% endfor %}
+        </select>
+        </div>
+        <div>
+        <label for="category">Category</label>
+        <select name="category">
+            <option value=""></option>
+
+            {% for category in categories %}
+            <option
+                    value="{{ category.id }}"
+                    {% if category.id|stringformat:"s" == selected_category %}selected{% endif %}
+            >
+            {{ category.name }}
+            </option>
+            {% endfor %}
+        </select>
+        </div>
+        <div>
+        <label for="q">Search</label>
+        <input
+                type="search"
+                name="q"
+                placeholder="Search..."
+                value="{{ query }}"
+        />
+        </div>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <h3>Products</h3>
+    {% for product in products %}
+    <div style="margin: 1em 0; padding: 0.5em; border: 1px solid grey;">
+        <h4>Name: {{ product.name }}</h4>
+        <p>Description: {{ product.description }}</p>
+        Categories:
+        <ul>
+            {% for category in product.categories.all %}
+            <li>{{ category.name }}</li>
+            {% endfor %}
+        </ul>
+        Tags:
+        <ul>
+            {% for tag in product.tags.all %}
+            <li>{{ tag.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% empty %}
+    <p>No products available.</p>
+    {% endfor %}
+
+</div>
