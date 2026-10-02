@@ -1,1 +1,56 @@
-# assignment-sep-2026
+# Product Search
+## Vincent Potrykus
+
+A Django app for searching and filtering products. Products can be filtered by category and tag. The filter, category and
+tag queries can be combined.
+
+### Assumptions
+For the purpose of this assignment I assumed that only one category and one tag can be selected at a time.
+
+### Stack
+- Database: Django's builtin SQLite
+- Frontend: Django's builtin templates
+
+### Setup
+#### 1 Clone the repository
+```commandline
+git clone https://github.com/vnctptr/assignment-sep-2026.git
+cd assignment-sep-2026
+```
+#### 2 Install python
+
+Install python and activate it. Python 3.14 and pyenv are recommended.
+```commandline
+pyenv install 3.14
+pyenv local 3.14
+```
+
+#### 3 Create a virtual environment
+
+Create the environment and activate it.
+```commandline
+python -m venv .venv
+source .venv/bin/activate
+```
+
+#### 4 Install dependencies
+```commandline
+python -m pip install Django
+```
+
+#### 5 Start the development server
+```commandline
+python manage.py runserver
+```
+
+### AI Usage
+I used AI mostly for minor autocompletion. For example:
+```python
+name = models.CharField(max_length=200) # the part after "models.Char" was autocompleted by Copilot
+```
+
+Some repetitive snippets were also autocompleted, for example:
+```html
+<h4>Name: {{ product.name }}</h4>
+<p>Description: {{ product.description }}</p> 
+```
