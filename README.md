@@ -45,6 +45,12 @@ python -m pip install Django
 python manage.py runserver
 ```
 
+### Tests
+To run tests run this command in the assignment-sep-2026 directory:
+```commandline
+python manage.py test 
+```
+
 ### AI Usage
 I used AI mostly for minor autocompletion. For example:
 ```python
