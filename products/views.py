@@ -3,9 +3,6 @@ from django.template import loader
 
 from .models import Product, Category, Tag
 
-from django.db.models import Q
-
-
 def search(request):
     # Parse query parameters
     query = request.GET.get("q", "")
@@ -15,7 +12,7 @@ def search(request):
     # Filter products
     products = Product.objects.all()
     if query:
-        products = products.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        products = products.filter(description__icontains=query)
     if category_id:
         products = products.filter(categories__id=category_id)
     if tag_id:

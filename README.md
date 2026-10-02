@@ -7,6 +7,8 @@ tag queries can be combined.
 ### Assumptions
 For the purpose of this assignment I assumed that only one category and one tag can be selected at a time.
 
+Products can be searched by description only. They cannot be searched by name as per the "Search and Filter Functionality" section in assignment description _Create a simple HTML page that allows users to: Search products by description._
+
 ### Stack
 - Database: Django's builtin SQLite
 - Frontend: Django's builtin templates
