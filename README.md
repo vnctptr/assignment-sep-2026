@@ -44,6 +44,14 @@ python -m pip install Django
 ```commandline
 python manage.py runserver
 ```
+Go to the link shown in the terminal (most likely http://127.0.0.1:8000/)
+
+#### Password
+If you need to access the admin portal at http://127.0.0.1:8000/admin here are the credentials:
+
+username: `vincentpotrykus`
+
+password: `password`
 
 ### Tests
 To run tests run this command in the assignment-sep-2026 directory:
